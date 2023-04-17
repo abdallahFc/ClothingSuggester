@@ -48,12 +48,6 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun saveTopSuggestion(suggestionId: Int?) {
-        sharedPreferences.edit().putInt(LAST_TOP_SUGGESTION_KEY, suggestionId ?: -1).apply()
-    }
-    private fun saveBottomSuggestion(suggestionId: Int?) {
-        sharedPreferences.edit().putInt(LAST_BOTTOM_SUGGESTION_KEY, suggestionId ?: -1).apply()
-    }
     private fun showLoading() {
         with(binding) {
             progressBar.visibility = View.VISIBLE
@@ -114,6 +108,12 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
+    }
+    private fun saveTopSuggestion(suggestionId: Int?) {
+        sharedPreferences.edit().putInt(LAST_TOP_SUGGESTION_KEY, suggestionId ?: -1).apply()
+    }
+    private fun saveBottomSuggestion(suggestionId: Int?) {
+        sharedPreferences.edit().putInt(LAST_BOTTOM_SUGGESTION_KEY, suggestionId ?: -1).apply()
     }
 
 
